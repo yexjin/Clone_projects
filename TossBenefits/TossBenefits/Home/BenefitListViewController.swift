@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class BenefitListViewController: UIViewController {
     
@@ -27,8 +28,13 @@ class BenefitListViewController: UIViewController {
     
     var datasource: UICollectionViewDiffableDataSource<Section, Item>!
     
-    var todaySectionItems: [AnyHashable] = TodaySectionItem(point: .default, today: .today).sectionItems
-    var otherSectionItems: [AnyHashable] = Benefit.others  // 나머지 혜택
+//    var todaySectionItems: [AnyHashable] = TodaySectionItem(point: .default, today: .today).sectionItems
+//    var otherSectionItems: [AnyHashable] = Benefit.others  // 나머지 혜택
+    
+    @Published var todaySectionItems: [AnyHashable] = []
+    @Published var otherSectionItems: [AnyHashable] = []
+    
+    var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +47,7 @@ class BenefitListViewController: UIViewController {
                     
                 return cell
         })
-        
-        
-        
+
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.today, .other])
         snapshot.appendItems(todaySectionItems, toSection: .today)
@@ -54,7 +58,46 @@ class BenefitListViewController: UIViewController {
         collectionView.delegate = self
 
         navigationItem.title = "혜택"
+        
+        bind() 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // main thread에서 0.5초 뒤에 로저를 실행한다.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.todaySectionItems = TodaySectionItem(point: .default, today: .today).sectionItems
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.otherSectionItems = Benefit.others  // 나머지 혜택
+        }
+    }
+    
+    private func bind() {
+        
+        $todaySectionItems
+            .receive(on: RunLoop.main)
+            .sink{ items in
+                // item 이 들어오면 snapshot에 반영하기
+                self.applySnapshot(items: items, section: .today)
+            }.store(in: &subscriptions )
+        
+        $otherSectionItems
+            .receive(on: RunLoop.main)
+            .sink{ items in
+                // item 이 들어오면 snapshot에 반영하기
+                self.applySnapshot(items: items, section: .other)
+            }.store(in: &subscriptions )
+    }
+    
+    private func applySnapshot(items: [Item], section: Section) {
+        var snapshot = datasource.snapshot()
+        snapshot.appendItems(items, toSection: section)
+        datasource.apply(snapshot)
+    }
+    
     
     private func configureCell(for section: Section, item: Item, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell? {
         
