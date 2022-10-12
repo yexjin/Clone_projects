@@ -27,10 +27,7 @@ class BenefitListViewController: UIViewController {
     }
     
     var datasource: UICollectionViewDiffableDataSource<Section, Item>!
-    
-//    var todaySectionItems: [AnyHashable] = TodaySectionItem(point: .default, today: .today).sectionItems
-//    var otherSectionItems: [AnyHashable] = Benefit.others  // 나머지 혜택
-    
+      
     @Published var todaySectionItems: [AnyHashable] = []
     @Published var otherSectionItems: [AnyHashable] = []
     
@@ -38,7 +35,16 @@ class BenefitListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        configureCollectionView()
+        bind()
+    }
+    
+    private func setupUI() {
+        navigationItem.title = "혜택"
+    }
+    
+    private func configureCollectionView() {
         datasource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             
             // section 별로 cell을 가져와서 return (indexPath에 section의 정보가 있음 (Section)
@@ -56,10 +62,6 @@ class BenefitListViewController: UIViewController {
         
         collectionView.collectionViewLayout = layout()
         collectionView.delegate = self
-
-        navigationItem.title = "혜택"
-        
-        bind() 
     }
     
     override func viewDidAppear(_ animated: Bool) {
