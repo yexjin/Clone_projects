@@ -151,7 +151,7 @@ class BenefitListViewController: UIViewController {
 }
 
 extension BenefitListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = datasource.itemIdentifier(for: indexPath)
         
         if let benefit = item as? Benefit {
