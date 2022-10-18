@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="CarrotHomeTab" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wo3-6G-BGw"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house" id="wo3-6G-BGw"/>
                     <navigationItem key="navigationItem" id="JVq-Af-yjz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,6 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AWv-bt-41k"/>
@@ -85,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="83.705357142857139"/>
         </scene>
-        <!--Item-->
+        <!--내 근처-->
         <scene sceneID="8Vz-hs-fij">
             <objects>
                 <viewController id="Gdw-Kn-hsl" sceneMemberID="viewController">
@@ -95,14 +96,14 @@
                         <viewLayoutGuide key="safeArea" id="Lar-5S-4Ou"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="WD7-vg-4de"/>
+                    <tabBarItem key="tabBarItem" title="내 근처" image="mappin.and.ellipse" catalog="system" selectedImage="mappin.and.ellipse" id="WD7-vg-4de"/>
                     <navigationItem key="navigationItem" id="pF0-5G-W8j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Me-PV-j5s" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="441" y="1063"/>
         </scene>
-        <!--Item-->
+        <!--동네 생활-->
         <scene sceneID="vSF-pg-O0o">
             <objects>
                 <viewController id="U5e-np-ZrB" sceneMemberID="viewController">
@@ -112,14 +113,14 @@
                         <viewLayoutGuide key="safeArea" id="CbJ-pA-Dbe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pMB-ef-jNx"/>
+                    <tabBarItem key="tabBarItem" title="동네 생활" image="doc" catalog="system" selectedImage="doc" id="pMB-ef-jNx"/>
                     <navigationItem key="navigationItem" id="jUK-Ef-FR5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csx-TS-QVh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-206" y="1063"/>
         </scene>
-        <!--Item-->
+        <!--채팅-->
         <scene sceneID="M8q-Tk-fKR">
             <objects>
                 <viewController id="6g5-Yc-5XK" sceneMemberID="viewController">
@@ -129,14 +130,14 @@
                         <viewLayoutGuide key="safeArea" id="xd7-im-bux"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2FK-MG-dfw"/>
+                    <tabBarItem key="tabBarItem" title="채팅" image="rectangle.3.group" catalog="system" selectedImage="rectangle.3.group" id="2FK-MG-dfw"/>
                     <navigationItem key="navigationItem" id="gTa-n2-vJ5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww8-sB-qwT" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1094" y="1063"/>
         </scene>
-        <!--Item-->
+        <!--나의 당근-->
         <scene sceneID="YKu-dg-nXM">
             <objects>
                 <viewController id="4F8-ay-3pb" sceneMemberID="viewController">
@@ -146,7 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="i3u-hy-NA6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wMw-ni-Qe5"/>
+                    <tabBarItem key="tabBarItem" title="나의 당근" image="person" catalog="system" selectedImage="person" id="wMw-ni-Qe5"/>
                     <navigationItem key="navigationItem" id="8cm-kQ-v5I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QES-NK-VNR" sceneMemberID="firstResponder"/>
@@ -155,6 +156,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="rectangle.3.group" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
