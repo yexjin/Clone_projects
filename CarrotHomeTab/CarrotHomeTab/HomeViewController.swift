@@ -14,5 +14,13 @@ class HomeViewController: UIViewController {
 
     }
  
-
+    @IBAction func ctaButtonTapped(_ sender: Any) {
+        
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
