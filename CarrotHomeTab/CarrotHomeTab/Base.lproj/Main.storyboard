@@ -106,7 +106,7 @@
         <!--동네 생활-->
         <scene sceneID="vSF-pg-O0o">
             <objects>
-                <viewController id="U5e-np-ZrB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyTownViewController" id="U5e-np-ZrB" customClass="MyTownViewController" customModule="CarrotHomeTab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tvf-9d-DCH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
         <!--채팅-->
         <scene sceneID="M8q-Tk-fKR">
             <objects>
-                <viewController id="6g5-Yc-5XK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="6g5-Yc-5XK" customClass="ChatViewController" customModule="CarrotHomeTab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gFN-LQ-4y5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
         <!--나의 당근-->
         <scene sceneID="YKu-dg-nXM">
             <objects>
-                <viewController id="4F8-ay-3pb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileViewController" id="4F8-ay-3pb" customClass="MyProfileViewController" customModule="CarrotHomeTab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Vz-og-jcu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

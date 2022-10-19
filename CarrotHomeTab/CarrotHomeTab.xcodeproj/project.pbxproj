@@ -21,6 +21,11 @@
 		0362FCAA28F9A44C009D579E /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362FCA928F9A44C009D579E /* MainNavigationViewController.swift */; };
 		0362FCAC28F9A479009D579E /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0362FCAB28F9A479009D579E /* MainTabBarViewController.swift */; };
 		0362FCAE28F9A593009D579E /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0362FCAD28F9A593009D579E /* Detail.storyboard */; };
+		03E0D73028FE36A8002138F4 /* MyTownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0D72F28FE36A8002138F4 /* MyTownViewController.swift */; };
+		03E0D73228FE36B3002138F4 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0D73128FE36B3002138F4 /* MyProfileViewController.swift */; };
+		03E0D73428FE36C0002138F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0D73328FE36C0002138F4 /* ChatViewController.swift */; };
+		03E0D73628FE40C3002138F4 /* CustomBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0D73528FE40C3002138F4 /* CustomBarItem.swift */; };
+		03E0D73828FF8011002138F4 /* UIBarButtonItem+CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0D73728FF8011002138F4 /* UIBarButtonItem+CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		0362FCA928F9A44C009D579E /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		0362FCAB28F9A479009D579E /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		0362FCAD28F9A593009D579E /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		03E0D72F28FE36A8002138F4 /* MyTownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTownViewController.swift; sourceTree = "<group>"; };
+		03E0D73128FE36B3002138F4 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		03E0D73328FE36C0002138F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		03E0D73528FE40C3002138F4 /* CustomBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarItem.swift; sourceTree = "<group>"; };
+		03E0D73728FF8011002138F4 /* UIBarButtonItem+CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+CustomView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				0362FC8528F9A123009D579E /* AppDelegate.swift */,
+				03E0D72F28FE36A8002138F4 /* MyTownViewController.swift */,
+				03E0D73128FE36B3002138F4 /* MyProfileViewController.swift */,
+				03E0D73328FE36C0002138F4 /* ChatViewController.swift */,
 				0362FC8728F9A123009D579E /* SceneDelegate.swift */,
 				0362FC8B28F9A123009D579E /* Main.storyboard */,
 				0362FCAD28F9A593009D579E /* Detail.storyboard */,
@@ -80,6 +93,8 @@
 				0362FC9028F9A124009D579E /* LaunchScreen.storyboard */,
 				0362FC9328F9A124009D579E /* Info.plist */,
 				0362FCAB28F9A479009D579E /* MainTabBarViewController.swift */,
+				03E0D73728FF8011002138F4 /* UIBarButtonItem+CustomView.swift */,
+				03E0D73528FE40C3002138F4 /* CustomBarItem.swift */,
 				0362FCA928F9A44C009D579E /* MainNavigationViewController.swift */,
 				0362FCA728F9A39B009D579E /* DetailViewController.swift */,
 				0362FCA528F9A392009D579E /* HomeViewController.swift */,
@@ -193,8 +208,13 @@
 				0362FC9A28F9A1CB009D579E /* Publisher+Utils.swift in Sources */,
 				0362FCA628F9A392009D579E /* HomeViewController.swift in Sources */,
 				0362FCAA28F9A44C009D579E /* MainNavigationViewController.swift in Sources */,
+				03E0D73228FE36B3002138F4 /* MyProfileViewController.swift in Sources */,
 				0362FC8828F9A123009D579E /* SceneDelegate.swift in Sources */,
 				0362FCA028F9A22F009D579E /* NetworkService.swift in Sources */,
+				03E0D73428FE36C0002138F4 /* ChatViewController.swift in Sources */,
+				03E0D73028FE36A8002138F4 /* MyTownViewController.swift in Sources */,
+				03E0D73628FE40C3002138F4 /* CustomBarItem.swift in Sources */,
+				03E0D73828FF8011002138F4 /* UIBarButtonItem+CustomView.swift in Sources */,
 				0362FC9D28F9A1E6009D579E /* ItemInfo.swift in Sources */,
 				0362FCA228F9A23B009D579E /* Resource.swift in Sources */,
 			);
