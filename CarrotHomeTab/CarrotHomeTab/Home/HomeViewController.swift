@@ -8,26 +8,55 @@
 import UIKit
 import Combine
 
-// 홈 뷰모델 만들기 (리스트 가져오고, 아이템이 탭됐을 때 행동 정의)
-// 뷰모델은 리스트 가져오기
-
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    typealias Item = ItemInfo
+    enum Section {
+        case main
+    }
+    var datasource: UICollectionViewDiffableDataSource<Section, Item>!
     
     let viewModel: HomeViewModel = HomeViewModel(network: NetworkService(configuration: .default))
     var subscriptions = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
         bind()
-        viewModel.fetch()   // viewModel에 정의된 서버데이터 받는 fetch()
+        viewModel.fetch()
+    }
+    
+    private func configureCollectionView() {
+        datasource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectonView, indexPath, item in
+            guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ItemInfoCell", for: indexPath) as? ItemInfoCell else { return nil }
+            cell.configure(item: item)
+            return cell
+        })
+        
+        collectionView.collectionViewLayout = layout()
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems([], toSection: .main)
+        datasource.apply(snapshot)
+        
+        collectionView.delegate = self
+    }
+    
+    private func applyItem(_ items: [ItemInfo]) {
+        var snapshot = datasource.snapshot() // snapshot이 적용된 snapshot
+        snapshot.appendItems(items, toSection: .main)    // main section에 적용
+        datasource.apply(snapshot)
     }
     
     private func bind() {
-        // viewModel의 items가 세팅이 되면 main thread에서 받아서 view에 보여주기
+
         viewModel.$items
             .receive(on: RunLoop.main)
             .sink { items in
-                print("--> update collection view \(items)")
+                self.applyItem(items)   // 이렇게 해서 collectionView에 item이 바로 적용되게!!
             }.store(in: &subscriptions)
         
         viewModel.itemTapped
@@ -36,6 +65,15 @@ class HomeViewController: UIViewController {
                 let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
+    }
+    
+    private func layout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(140))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(140))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
 }
