@@ -63,6 +63,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031CA5332900C59B004D2211 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0362FCA528F9A392009D579E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		031CA5342900C5B0004D2211 /* MyTown */ = {
+			isa = PBXGroup;
+			children = (
+				03E0D72F28FE36A8002138F4 /* MyTownViewController.swift */,
+			);
+			path = MyTown;
+			sourceTree = "<group>";
+		};
+		031CA5352900C5B8004D2211 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				03E0D73128FE36B3002138F4 /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		031CA5362900C5C0004D2211 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				03E0D73328FE36C0002138F4 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		031CA5372900C5CE004D2211 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0362FCAD28F9A593009D579E /* Detail.storyboard */,
+				0362FCA728F9A39B009D579E /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		031CA5382900C5DB004D2211 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				03E0D73728FF8011002138F4 /* UIBarButtonItem+CustomView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		031CA5392900C60A004D2211 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0362FCA928F9A44C009D579E /* MainNavigationViewController.swift */,
+				0362FCAB28F9A479009D579E /* MainTabBarViewController.swift */,
+				0362FC8B28F9A123009D579E /* Main.storyboard */,
+				03E0D73528FE40C3002138F4 /* CustomBarItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0362FC7928F9A122009D579E = {
 			isa = PBXGroup;
 			children = (
@@ -83,24 +143,20 @@
 			isa = PBXGroup;
 			children = (
 				0362FC8528F9A123009D579E /* AppDelegate.swift */,
-				03E0D72F28FE36A8002138F4 /* MyTownViewController.swift */,
-				03E0D73128FE36B3002138F4 /* MyProfileViewController.swift */,
-				03E0D73328FE36C0002138F4 /* ChatViewController.swift */,
 				0362FC8728F9A123009D579E /* SceneDelegate.swift */,
-				0362FC8B28F9A123009D579E /* Main.storyboard */,
-				0362FCAD28F9A593009D579E /* Detail.storyboard */,
-				0362FC8E28F9A124009D579E /* Assets.xcassets */,
-				0362FC9028F9A124009D579E /* LaunchScreen.storyboard */,
-				0362FC9328F9A124009D579E /* Info.plist */,
-				0362FCAB28F9A479009D579E /* MainTabBarViewController.swift */,
-				03E0D73728FF8011002138F4 /* UIBarButtonItem+CustomView.swift */,
-				03E0D73528FE40C3002138F4 /* CustomBarItem.swift */,
-				0362FCA928F9A44C009D579E /* MainNavigationViewController.swift */,
-				0362FCA728F9A39B009D579E /* DetailViewController.swift */,
-				0362FCA528F9A392009D579E /* HomeViewController.swift */,
+				031CA5392900C60A004D2211 /* Views */,
+				031CA5332900C59B004D2211 /* Home */,
+				031CA5372900C5CE004D2211 /* Detail */,
+				031CA5342900C5B0004D2211 /* MyTown */,
+				031CA5352900C5B8004D2211 /* MyProfile */,
+				031CA5382900C5DB004D2211 /* Extension */,
+				031CA5362900C5C0004D2211 /* Chat */,
 				0362FCA428F9A25F009D579E /* Network */,
 				0362FC9E28F9A1EA009D579E /* Model */,
 				0362FC9B28F9A1D2009D579E /* Utils */,
+				0362FC9028F9A124009D579E /* LaunchScreen.storyboard */,
+				0362FC8E28F9A124009D579E /* Assets.xcassets */,
+				0362FC9328F9A124009D579E /* Info.plist */,
 			);
 			path = CarrotHomeTab;
 			sourceTree = "<group>";
