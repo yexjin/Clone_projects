@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController, UICollectionViewDelegate {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -63,6 +63,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
             .sink { item in
                 let sb = UIStoryboard(name: "Detail", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+                vc.viewModel  = DetailViewModel(network: NetworkService(configuration: .default), itemInfo: item)
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
@@ -72,8 +73,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(140))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
         let section = NSCollectionLayoutSection(group: group)
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+}
+
+// UI에서 Cell을 선택한 것을 알 수 있게 하는 delegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = viewModel.items[indexPath.item]  // 몇번째 item인지 알 수 있음
+        viewModel.itemTapped.send(item) // 해당 아이템에 해당하는 detail view controller가 만들어져서
+    }
 }
